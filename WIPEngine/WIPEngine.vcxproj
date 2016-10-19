@@ -71,7 +71,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>include;Base;Graphics;System;Managers;$(IncludePath)</IncludePath>
+    <IncludePath>include;Base;Graphics;System;Managers;Engine;$(IncludePath)</IncludePath>
     <LibraryPath>lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -150,6 +150,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Base\wipeEngineBase.cpp" />
+    <ClCompile Include="Engine\wipeEngine.cpp" />
     <ClCompile Include="Graphics\wipeGraphics.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Managers\wipeEngineManager.cpp" />
@@ -157,6 +158,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Base\wipeEngineBase.h" />
+    <ClInclude Include="Engine\wipeEngine.h" />
     <ClInclude Include="Graphics\wipeGraphics.h" />
     <ClInclude Include="Managers\wipeEngineManager.h" />
     <ClInclude Include="System\Window\wipeWindow.h" />

@@ -31,6 +31,9 @@
     <Filter Include="Managers">
       <UniqueIdentifier>{fb56f002-f379-40a9-9205-aafb37fcbe0d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{c79eaf8d-e586-44d7-aa8c-448ce567e720}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -48,6 +51,9 @@
     <ClCompile Include="Managers\wipeEngineManager.cpp">
       <Filter>Managers</Filter>
     </ClCompile>
+    <ClCompile Include="Engine\wipeEngine.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Graphics\wipeGraphics.h">
@@ -61,6 +67,9 @@
     </ClInclude>
     <ClInclude Include="Managers\wipeEngineManager.h">
       <Filter>Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\wipeEngine.h">
+      <Filter>Engine</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
