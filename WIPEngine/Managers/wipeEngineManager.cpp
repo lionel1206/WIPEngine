@@ -1,35 +1,45 @@
 #include "wipeEngineManager.h"
 
-wipeEngineManager* wipeEngineManager::mEngineManagerPtr;
-
-wipeEngineManager::wipeEngineManager()
+namespace wipengine
 {
+	wipeEngineManager* wipeEngineManager::mEngineManagerPtr;
 
-}
-
-wipeEngineManager* wipeEngineManager::getSingleton()
-{
-	if(!mEngineManagerPtr)
-		mEngineManagerPtr = new wipeEngineManager();
-
-	return mEngineManagerPtr;
-}
-
-void wipeEngineManager::add(wipeEngineBase* engine)
-{
-	mEngineContainer.push_back(engine);
-}
-
-void wipeEngineManager::run()
-{
-	for each(wipeEngineBase* engine in mEngineContainer)
+	wipeEngineManager::wipeEngineManager()
 	{
-		engine->run();
+
+	}
+
+	wipeEngineManager* wipeEngineManager::getSingleton()
+	{
+		if (!mEngineManagerPtr)
+			mEngineManagerPtr = new wipeEngineManager();
+
+		return mEngineManagerPtr;
+	}
+
+	void wipeEngineManager::add(wipeEngineBase* engine)
+	{
+		mEngineContainer.push_back(engine);
+	}
+
+	void wipeEngineManager::run()
+	{
+		for each(wipeEngineBase* engine in mEngineContainer)
+		{
+			engine->run();
+		}
+	}
+
+	void wipeEngineManager::shutdown()
+	{
+		for each(wipeEngineBase* engine in mEngineContainer)
+		{
+			engine->shutdown();
+			delete engine;
+		}
+
+		if (!mEngineManagerPtr)
+			delete mEngineManagerPtr;
 	}
 }
 
-void wipeEngineManager::shutdown()
-{
-	if (!mEngineManagerPtr)
-		delete mEngineManagerPtr;
-}

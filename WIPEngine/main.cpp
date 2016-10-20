@@ -1,32 +1,24 @@
-#include "Graphics\wipeGraphics.h"
-#include "System\Window\wipeWindow.h"
+
 #include <Windows.h>
-#include "Managers\wipeEngineManager.h";
+#include <iostream>
+#include "Engine\wipeEngine.h"
 
 int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR, int)
 {
 	int width = 1280;
 	int height = 720;
+	
+	wipengine::wipeEngine* engine = new wipengine::wipeEngine(width, height);
+	
+	if (!engine->initialize())
+	{
+		std::cout << "Initialize engine failed..." << std::endl;
+	}
 
-	wipeGraphics* graphics = new wipeGraphics();
-	wipeWindow* window = new wipeWindow(height, width);
+	engine->run();
+	engine->shutdown();
 
-	if (!window->createWindow("WIPEngine"))
-		return -1;
-
-	if (!graphics->initialize())
-		return -1;
-
-	wipeEngineManager::getSingleton()->add(graphics);
-
-	graphics->setViewport(width, height);
-	window->run();
-	window->close();
-
-	delete window;
-	delete graphics;
-
-	wipeEngineManager::getSingleton()->shutdown();
+	delete engine;
 
 	return 0;
 }

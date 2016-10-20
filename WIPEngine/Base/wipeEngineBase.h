@@ -1,11 +1,15 @@
 #pragma once
 
-class wipeEngineBase
+namespace wipengine
 {
-public:
-	wipeEngineBase();
-	~wipeEngineBase();
-	virtual bool initialize() = 0;
-	virtual void run() = 0;
-	virtual void shutdown() = 0;
-};
+	class wipeEngineBase
+	{
+	public:
+		wipeEngineBase();
+		~wipeEngineBase();
+		virtual bool initialize() = 0;
+		virtual void run() = 0;
+		virtual void shutdown() = 0;
+	};
+}
+

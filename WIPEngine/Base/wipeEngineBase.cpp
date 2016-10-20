@@ -1,9 +1,12 @@
 #include "wipeEngineBase.h"
 
-wipeEngineBase::wipeEngineBase()
+namespace wipengine
 {
-}
+	wipeEngineBase::wipeEngineBase()
+	{
+	}
 
-wipeEngineBase::~wipeEngineBase()
-{
+	wipeEngineBase::~wipeEngineBase()
+	{
+	}
 }

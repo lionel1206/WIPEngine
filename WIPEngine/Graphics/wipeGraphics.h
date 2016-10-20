@@ -4,15 +4,19 @@
 #include <GL\glew.h>
 #include "../Base/wipeEngineBase.h"
 
-class wipeGraphics : public wipeEngineBase
+namespace wipengine
 {
-public:
-	wipeGraphics();
-	~wipeGraphics();
-	bool initialize();
-	void run();
-	void shutdown();
-	void setViewport(int width, int height);
-private:
+	class wipeGraphics : public wipeEngineBase
+	{
+	public:
+		wipeGraphics();
+		~wipeGraphics();
+		bool initialize();
+		void run();
+		void shutdown();
+		void setViewport(int width, int height);
+	private:
 
-};
+	};
+}
+

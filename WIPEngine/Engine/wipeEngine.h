@@ -1,20 +1,23 @@
 #pragma once
 #include "../Base/wipeEngineBase.h"
 
-class wipeWindow;
-
 namespace wipengine
 {
+	class wipeWindow;
+
 	class wipeEngine : public wipeEngineBase
 	{
 	public:
-		wipeEngine();
+		wipeEngine(int width, int height);
 		~wipeEngine();
 
 		bool initialize();
 		void run();
 		void shutdown();
 	private:
+
+		bool initializeEngines();
+
 		int mWindowWidth;
 		int mWindowHeight;
 		wipeWindow* mWindow;
