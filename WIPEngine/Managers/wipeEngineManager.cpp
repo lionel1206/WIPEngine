@@ -9,7 +9,7 @@ namespace wipengine
 
 	}
 
-	wipeEngineManager* wipeEngineManager::getSingleton()
+	wipeEngineManager* wipeEngineManager::getSingleton() 
 	{
 		if (!mEngineManagerPtr)
 			mEngineManagerPtr = new wipeEngineManager();

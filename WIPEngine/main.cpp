@@ -1,4 +1,3 @@
-
 #include <Windows.h>
 #include <iostream>
 #include "Engine\wipeEngine.h"
