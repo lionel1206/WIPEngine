@@ -1,7 +1,7 @@
 #pragma once
 
 #include <vector>
-#include "../Base/wipeEngineBase.h"
+#include "../Base/wipeEngineBaseEntity.h"
 
 namespace wipengine
 {
@@ -9,12 +9,12 @@ namespace wipengine
 	{
 	public:
 		static wipeEngineManager* getSingleton();
-		void add(wipeEngineBase* engine);
+		void add(wipeEngineBaseEntity* engine);
 		void run();
 		void shutdown();
 	private:
 		wipeEngineManager();
-		typedef std::vector<wipeEngineBase*> engineContainer;
+		typedef std::vector<wipeEngineBaseEntity*> engineContainer;
 		engineContainer mEngineContainer;
 		static wipeEngineManager* mEngineManagerPtr;
 	};

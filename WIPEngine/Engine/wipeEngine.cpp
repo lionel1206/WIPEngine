@@ -1,7 +1,7 @@
 #include "wipeEngine.h"
 
 #include "..\Managers\wipeEngineManager.h"
-#include "..\Graphics\wipeGraphics.h"
+#include "..\Graphics\wipeGraphicEngine.h"
 #include "..\System\Window\wipeWindow.h"
 
 namespace wipengine
@@ -30,13 +30,13 @@ namespace wipengine
 
 	bool wipeEngine::initializeEngines()
 	{
-		wipeGraphics* graphics = new wipeGraphics();
-		if (!graphics->initialize())
+		wipeGraphicEngine* graphicEngine = new wipeGraphicEngine();
+		if (!graphicEngine->initialize())
 			return false;
 
-		graphics->setViewport(mWindowWidth, mWindowHeight);
+		graphicEngine->setViewport(mWindowWidth, mWindowHeight);
 
-		wipeEngineManager::getSingleton()->add(graphics);
+		wipeEngineManager::getSingleton()->add(graphicEngine);
 
 		return true;
 	}

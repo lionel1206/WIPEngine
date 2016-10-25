@@ -39,14 +39,8 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Graphics\wipeGraphics.cpp">
-      <Filter>Graphics</Filter>
-    </ClCompile>
     <ClCompile Include="System\Window\wipeWindow.cpp">
       <Filter>System\Window</Filter>
-    </ClCompile>
-    <ClCompile Include="Base\wipeEngineBase.cpp">
-      <Filter>Base</Filter>
     </ClCompile>
     <ClCompile Include="Managers\wipeEngineManager.cpp">
       <Filter>Managers</Filter>
@@ -54,22 +48,28 @@
     <ClCompile Include="Engine\wipeEngine.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
+    <ClCompile Include="Base\wipeEngineBaseEntity.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\wipeGraphicEngine.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Graphics\wipeGraphics.h">
-      <Filter>Graphics</Filter>
-    </ClInclude>
     <ClInclude Include="System\Window\wipeWindow.h">
       <Filter>System\Window</Filter>
-    </ClInclude>
-    <ClInclude Include="Base\wipeEngineBase.h">
-      <Filter>Base</Filter>
     </ClInclude>
     <ClInclude Include="Managers\wipeEngineManager.h">
       <Filter>Managers</Filter>
     </ClInclude>
     <ClInclude Include="Engine\wipeEngine.h">
       <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\wipeEngineBaseEntity.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\wipeGraphicEngine.h">
+      <Filter>Graphics</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

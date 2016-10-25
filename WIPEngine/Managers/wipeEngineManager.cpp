@@ -17,14 +17,14 @@ namespace wipengine
 		return mEngineManagerPtr;
 	}
 
-	void wipeEngineManager::add(wipeEngineBase* engine)
+	void wipeEngineManager::add(wipeEngineBaseEntity* engine)
 	{
 		mEngineContainer.push_back(engine);
 	}
 
 	void wipeEngineManager::run()
 	{
-		for each(wipeEngineBase* engine in mEngineContainer)
+		for each(wipeEngineBaseEntity* engine in mEngineContainer)
 		{
 			engine->run();
 		}
@@ -32,7 +32,7 @@ namespace wipengine
 
 	void wipeEngineManager::shutdown()
 	{
-		for each(wipeEngineBase* engine in mEngineContainer)
+		for each(wipeEngineBaseEntity* engine in mEngineContainer)
 		{
 			engine->shutdown();
 			delete engine;

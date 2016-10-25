@@ -1,11 +1,11 @@
 #pragma once
-#include "../Base/wipeEngineBase.h"
+#include "../Base/wipeEngineBaseEntity.h"
 
 namespace wipengine
 {
 	class wipeWindow;
 
-	class wipeEngine : public wipeEngineBase
+	class wipeEngine : public wipeEngineBaseEntity
 	{
 	public:
 		wipeEngine(int width, int height);

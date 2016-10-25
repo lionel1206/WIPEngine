@@ -149,17 +149,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Base\wipeEngineBase.cpp" />
+    <ClCompile Include="Base\wipeEngineBaseEntity.cpp" />
     <ClCompile Include="Engine\wipeEngine.cpp" />
-    <ClCompile Include="Graphics\wipeGraphics.cpp" />
+    <ClCompile Include="Graphics\wipeGraphicEngine.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Managers\wipeEngineManager.cpp" />
     <ClCompile Include="System\Window\wipeWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Base\wipeEngineBase.h" />
+    <ClInclude Include="Base\wipeEngineBaseEntity.h" />
     <ClInclude Include="Engine\wipeEngine.h" />
-    <ClInclude Include="Graphics\wipeGraphics.h" />
+    <ClInclude Include="Graphics\wipeGraphicEngine.h" />
     <ClInclude Include="Managers\wipeEngineManager.h" />
     <ClInclude Include="System\Window\wipeWindow.h" />
   </ItemGroup>
