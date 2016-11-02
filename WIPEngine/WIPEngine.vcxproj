@@ -95,8 +95,15 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>OpenGL32.lib;glfw3.lib;glew32s.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>OpenGL32.lib;glfw3.lib;glew32s.lib;AntTweakBar.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>copy "$(ProjectDir)bin\AntTweakBar.dll" "$(TargetDir)"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -150,18 +157,24 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Base\wipeEngineBaseEntity.cpp" />
+    <ClCompile Include="Base\wipeEngineComponent.cpp" />
+    <ClCompile Include="Base\wipeEngineObject.cpp" />
     <ClCompile Include="Engine\wipeEngine.cpp" />
     <ClCompile Include="Graphics\wipeGraphicEngine.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Managers\wipeEngineManager.cpp" />
     <ClCompile Include="System\Window\wipeWindow.cpp" />
+    <ClCompile Include="Utility\wipeTimer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Base\wipeEngineBaseEntity.h" />
+    <ClInclude Include="Base\wipeEngineComponent.h" />
+    <ClInclude Include="Base\wipeEngineObject.h" />
     <ClInclude Include="Engine\wipeEngine.h" />
     <ClInclude Include="Graphics\wipeGraphicEngine.h" />
     <ClInclude Include="Managers\wipeEngineManager.h" />
     <ClInclude Include="System\Window\wipeWindow.h" />
+    <ClInclude Include="Utility\wipeTimer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -3,6 +3,7 @@
 #define GLEW_STATIC
 #include <GL\glew.h>
 #include "../Base/wipeEngineBaseEntity.h"
+#include "../include/AntTweakBar.h"
 
 namespace wipengine
 {
@@ -16,7 +17,7 @@ namespace wipengine
 		void shutdown();
 		void setViewport(int width, int height);
 	private:
-
+		
 	};
 }
 

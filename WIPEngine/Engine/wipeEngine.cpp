@@ -3,10 +3,12 @@
 #include "..\Managers\wipeEngineManager.h"
 #include "..\Graphics\wipeGraphicEngine.h"
 #include "..\System\Window\wipeWindow.h"
+#include "..\Utility\wipeTimer.h"
 
 namespace wipengine
 {
-	wipeEngine::wipeEngine(int width, int height) : mWindowWidth(width), mWindowHeight(height), mWindow(nullptr)
+	wipeEngine::wipeEngine(int width, int height) : mWindowWidth(width),
+		mWindowHeight(height), mWindow(nullptr), mFPS(0.0), mDt(0.0)
 	{
 	}
 
@@ -38,6 +40,14 @@ namespace wipengine
 
 		wipeEngineManager::getSingleton()->add(graphicEngine);
 
+		wipeTimer::initializeTimer(mWindow->getTime());
+		TwInit(TW_OPENGL_CORE, NULL);
+		TwWindowSize(mWindowWidth, mWindowHeight);
+
+		mATTimerDIsplay = TwNewBar("Timer DIsplay");
+		TwAddVarRO(mATTimerDIsplay, "Delta Time", TW_TYPE_DOUBLE, &mDt, "");
+		TwAddVarRO(mATTimerDIsplay, "FPS", TW_TYPE_DOUBLE, &mFPS, "");
+
 		return true;
 	}
 
@@ -45,14 +55,19 @@ namespace wipengine
 	{
 		while (!mWindow->isWindowClose())
 		{
+			wipeTimer::updateTimer(mWindow->getTime());
+			mDt = wipeTimer::getDt();
+			mFPS = wipeTimer::getFPS();
 			mWindow->listenForInput();
 			wipeEngineManager::getSingleton()->run();
+			TwDraw();
 			mWindow->swapBuffer();
 		}
 	}
 
 	void wipeEngine::shutdown()
 	{
+		TwTerminate();
 		mWindow->close();
 
 		wipeEngineManager::getSingleton()->shutdown();

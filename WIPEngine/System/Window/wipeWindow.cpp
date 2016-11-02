@@ -30,6 +30,7 @@ namespace wipengine
 			return false;
 		}
 		glfwMakeContextCurrent(mWindowPtr);
+
 		return true;
 	}
 
@@ -51,6 +52,11 @@ namespace wipengine
 	void wipeWindow::close()
 	{
 		glfwTerminate();
+	}
+
+	double wipeWindow::getTime()
+	{
+		return glfwGetTime();
 	}
 }
 

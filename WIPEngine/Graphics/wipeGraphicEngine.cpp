@@ -1,4 +1,5 @@
 #include "wipeGraphicEngine.h"
+#include "..\Utility\wipeTimer.h"
 #include <iostream>
 
 namespace wipengine
@@ -19,7 +20,7 @@ namespace wipengine
 			std::cout << "Failed to initialize GLEW" << std::endl;
 			return false;
 		}
-
+		
 		return true;
 	}
 
@@ -36,7 +37,7 @@ namespace wipengine
 
 	void wipeGraphicEngine::shutdown()
 	{
-
+		
 	}
 }
 

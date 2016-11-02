@@ -14,7 +14,7 @@ namespace wipengine
 		void listenForInput();
 		void swapBuffer();
 		int isWindowClose();
-
+		double getTime();
 	private:
 		int mWindowHeight;
 		int mWindowWidth;
